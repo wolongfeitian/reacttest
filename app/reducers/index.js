@@ -3,7 +3,7 @@
  */
 import { combineReducers} from 'redux'
 import userinfo from './userinfo'
-
+//生成state
 export default combineReducers({
     userinfo
 })
