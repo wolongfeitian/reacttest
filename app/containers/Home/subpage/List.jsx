@@ -50,7 +50,7 @@ class List extends React.Component{
 
         // 增加 page 技术
         this.setState({
-            page: page + 1,
+
             isLoadingMore: false
         })
     }
@@ -67,9 +67,11 @@ class List extends React.Component{
         }).then(json =>{
             const hasMore = json.hasMore
             const data = json.data
+            const page = this.state.page
 
             this.setState({
                 hasMore: hasMore,
+                page: page + 1,
                 // 注意，这里讲最新获取的数据，拼接到原数据之后，使用 concat 函数
                 data: this.state.data.concat(data)
             })
