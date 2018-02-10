@@ -2,6 +2,8 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { Link,hashHistory } from 'react-router'
 
+import SearchInput from '../SearchInput'
+
 import './style.less'
 
 class HomeHeader extends React.Component {
@@ -28,28 +30,13 @@ class HomeHeader extends React.Component {
                 <div className="home-header-middle">
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        <input type="text" placeholder="请输入关键字"
-                               onChange={this.changeHandle.bind(this)}
-                               onKeyUp={this.keyUpHandle.bind(this)}
-                               value={this.state.kwd}/>
+                        <SearchInput/>
                     </div>
                 </div>
             </div>
         )
     }
-    changeHandle(e){
-        var val = e.target.value
-        console.log(44444)
-        this.setState({
-            kwd:val
-        })
-    }
-    keyUpHandle(e){
-        if(e.keyCode!=13){
-            return
-        }
-        hashHistory.push('/search/all/'+encodeURIComponent(this.state.kwd))
-    }
+
 }
 
 export default HomeHeader
