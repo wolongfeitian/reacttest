@@ -20,13 +20,16 @@ class SearchHeader extends React.Component{
                 <div className="input-container">
                     <i className="icon-search"></i>
                     &nbsp;
-                    <SearchInput value={this.props.keyword || ''}/>
+                    <SearchInput value={this.props.keyword || ''}  enterHandle={this.enterHandle.bind(this)}/>
                 </div>
             </div>
         )
     }
     clickHandle(){
         window.history.back()
+    }
+    enterHandle(value){
+        hashHistory.push('/search/all/' + encodeURIComponent(value))
     }
 }
 export default SearchHeader

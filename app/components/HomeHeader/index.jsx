@@ -30,11 +30,14 @@ class HomeHeader extends React.Component {
                 <div className="home-header-middle">
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        <SearchInput/>
+                        <SearchInput value=''  enterHandle={this.enterHandle.bind(this)}/>
                     </div>
                 </div>
             </div>
         )
+    }
+    enterHandle(value){
+        hashHistory.push('/search/all/' + encodeURIComponent(value))
     }
 
 }

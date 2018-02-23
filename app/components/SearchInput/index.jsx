@@ -2,11 +2,10 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import './style.less'
-import {hashHistory} from "react-router";
 
-class SearchInput extends React.Component{
-    constructor(props,context){
-        super(props,context);
+class SearchInput extends React.Component {
+    constructor(props , context){
+        super(props , context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
             value :''
@@ -38,7 +37,7 @@ class SearchInput extends React.Component{
         if(e.keyCode!=13){
             return
         }
-        hashHistory.push('/search/all/'+encodeURIComponent(this.state.value))
+        this.props.enterHandle(e.target.value)
     }
 }
 
