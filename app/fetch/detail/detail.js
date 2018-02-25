@@ -2,7 +2,7 @@ import {get} from '../get'
 
 export function getInfoData(id){
     const result = get('/api/detail/info/'+id)
-    result result
+    return result
 }
 
 export function getCommentData(page,id) {
