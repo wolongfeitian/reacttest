@@ -30,7 +30,7 @@ class Buy extends React.Component {
     checkStoreState() {
         const id = this.props.id
         const store = this.props.store
-
+        console.log('22222222',this.props)
         //some 即任何一个满足即可
         store.some(item => {
             if(item.id === id) {
